@@ -55,7 +55,7 @@ export default function LoginPage() {
     localStorage.setItem("bolao_user_id", newUser.id);
     localStorage.setItem("bolao_user_name", newUser.name);
 
-    window.location.href = "/palpites";
+    window.location.href = "/";
   }
 
   async function login() {
@@ -79,7 +79,7 @@ export default function LoginPage() {
     localStorage.setItem("bolao_user_id", user.id);
     localStorage.setItem("bolao_user_name", user.name);
 
-    window.location.href = "/palpites";
+    window.location.href = "/";
   }
 
   return (
