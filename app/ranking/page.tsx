@@ -131,7 +131,7 @@ export default function RankingPage() {
 
   return (
     <main style={{ padding: 30, maxWidth: 1100, margin: "0 auto" }}>
-      <h1 style={{ color: "#d4af37", fontSize: 36 }}>
+      <h1 style={{ color: "#d4af37", fontSize: 34, fontWeight: 700, }}>
         🏆 Ranking Geral
       </h1>
 
@@ -160,11 +160,11 @@ export default function RankingPage() {
                 key={item.participantId}
                 style={{
                   background: isCurrentUser
-                    ? "rgba(212, 175, 55, 0.18)"
-                    : "#111",
-                  border: isCurrentUser
-                    ? "1px solid rgba(212, 175, 55, 0.65)"
-                    : "1px solid #333",
+                  ? "rgba(212, 175, 55, 0.08)"
+                  : "#111",
+                border: isCurrentUser
+                  ? "1px solid rgba(212, 175, 55, 0.25)"
+                  : "1px solid #333",
                   borderRadius: 14,
                   padding: 20,
                   color: "#fff",
@@ -190,17 +190,34 @@ export default function RankingPage() {
                     </p>
                   )}
 
-                  <p style={{ color: "#aaa", marginTop: 8 }}>
-                    🎯 Placares exatos: {item.exactScores} • Acertos de resultado:{" "}
-                    {item.correctResults} • Erros: {item.errors}
-                  </p>
+                  <div
+                      style={{
+                        display: "flex",
+                        gap: 10,
+                        flexWrap: "wrap",
+                        marginTop: 12,
+                      }}
+                    >
+                      <span style={statBadge}>
+                        Placares exatos: {item.exactScores}
+                      </span>
+
+                      <span style={statBadge}>
+                        Acertos de resultado: {item.correctResults}
+                      </span>
+
+                      <span style={statBadge}>
+                        Erros: {item.errors}
+                      </span>
+                    </div>
                 </div>
 
                 <div style={{ textAlign: "right" }}>
                   <strong
                     style={{
                       color: "#d4af37",
-                      fontSize: 28,
+                      fontSize: 32,
+                      fontWeight: 700,
                     }}
                   >
                     {item.points}
@@ -217,4 +234,12 @@ export default function RankingPage() {
       )}
     </main>
   );
+}
+const statBadge: React.CSSProperties = {
+  background: "rgba(255, 255, 255, 0.06)",
+  border: "1px solid rgba(255, 255, 255, 0.08)",
+  borderRadius: 999,
+  padding: "6px 10px",
+  color: "#cfcfcf",
+  fontSize: 13,
 }
