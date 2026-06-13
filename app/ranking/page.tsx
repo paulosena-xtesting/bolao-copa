@@ -191,7 +191,7 @@ export default function RankingPage() {
                   )}
 
                   <p style={{ color: "#aaa", marginTop: 8 }}>
-                    Exatos: {item.exactScores} • Resultado certo:{" "}
+                    🎯 Placares exatos: {item.exactScores} • Acertos de resultado:{" "}
                     {item.correctResults} • Erros: {item.errors}
                   </p>
                 </div>
